@@ -1,8 +1,10 @@
 import { Link, useTheme } from "@mui/material";
 import { createStyles } from "@mui/styles";
+import { useSafeAppsSDK } from "@safe-global/safe-apps-react-sdk";
 import React, { useCallback, useMemo } from "react";
 import { useDropzone } from "react-dropzone";
 import { useDispatch } from "react-redux";
+import { useGetAssetBalanceQuery, useGetAllNFTsQuery } from "src/stores/api/balanceApi";
 
 import { updateCsvContent } from "../stores/slices/csvEditorSlice";
 
@@ -34,6 +36,9 @@ export const CSVDownload = (props: CSVDownloadProps): JSX.Element => {
       borderColor: `1px dashed ${theme.palette.error.dark}`,
     },
   });
+  useGetAssetBalanceQuery();
+  useGetAllNFTsQuery();
+  useSafeAppsSDK();
   const dispatch = useDispatch();
 
   const onDrop = useCallback(
