@@ -81,20 +81,20 @@ export const CSVDownload = (props: CSVDownloadProps): JSX.Element => {
 
   return (
     <div style={{ width: "100%" }}>
-      <div {...getRootProps({ style })}>
-        <input {...getInputProps()} />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <Link href="./sample.csv" download>
+      <Link href="./sample.csv" download>
+        <div style={style}>
+          <input {...getInputProps()} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             Sample Transfer File
-          </Link>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
