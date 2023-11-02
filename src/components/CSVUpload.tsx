@@ -60,7 +60,7 @@ export const CSVUpload = (props: CSVUploadProps): JSX.Element => {
     maxFiles: 1,
     onDrop,
     accept: {
-      text: [".csv"],
+      "text/csv": [".csv"],
     },
   });
 

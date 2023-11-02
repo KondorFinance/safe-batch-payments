@@ -65,7 +65,7 @@ export const CSVDownload = (props: CSVDownloadProps): JSX.Element => {
     maxFiles: 1,
     onDrop,
     accept: {
-      text: [".csv"],
+      "text/csv": [".csv"],
     },
   });
 
